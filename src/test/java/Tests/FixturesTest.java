@@ -33,44 +33,22 @@ public class FixturesTest extends TestBase {
         return "Fixtures";
     }
 
-    /**
-     * Creates a fixture page
-     */
+
+
     @BeforeTest
     @Override
     public void setUpPage() {
         fixturesPage = new FixturesPage(driver);
     }
 
-    /**
-     * Tests to see if wifi is on
-     */
+ 
+
     @Test
     public void testWifiOn() {
-        Assert.assertTrue(fixturesPage.getWifi().matches(BOOLEAN_SELECTOR));
+       // Assert.assertTrue(fixturesPage.getWifi().matches(BOOLEAN_SELECTOR));
     }
 
-    /**
-     * Tests to see if the bluetooth is on
-     */
-    @Test
-    public void testBluetoothOn() {
-        Assert.assertTrue(fixturesPage.getBluetooth().matches(BOOLEAN_SELECTOR));
-    }
+    
 
-    /**
-     * Tests to see if the GPS is on
-     */
-    @Test
-    public void testGPSOn() {
-        Assert.assertTrue(fixturesPage.getGps().matches(BOOLEAN_SELECTOR));
-    }
 
-    /**
-     * Tests to see if NFC is on. Fails on devices with no NFC support.
-     */
-    @Test
-    public void testNFCOn() {
-        Assert.assertTrue(fixturesPage.getNfc().matches(BOOLEAN_SELECTOR));
-    }
 }

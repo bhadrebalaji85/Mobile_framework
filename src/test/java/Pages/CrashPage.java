@@ -27,13 +27,13 @@ public class CrashPage extends BasePage {
     /**
      * The crash button
      */
-    @AndroidFindBy(name = "Crash Button")
+    @AndroidFindBy(className = "Crash Button")
     private WebElement crashButton;
 
     /**
      * The crash message
      */
-    @AndroidFindBy(name = "Unfortunately, ReferenceApp has stopped.")
+    @AndroidFindBy(className = "Unfortunately, ReferenceApp has stopped.")
     private WebElement crashMessage;
 
     public CrashPage(AppiumDriver driver) {

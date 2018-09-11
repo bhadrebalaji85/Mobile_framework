@@ -33,6 +33,7 @@ public class FixturesPage extends BasePage {
      *
      * @return wifi status
      */
+    /*
     public String getWifi() {
         return getStatus("Wifi:");
     }
@@ -40,7 +41,7 @@ public class FixturesPage extends BasePage {
     /**
      *
      * @return bluetooth status
-     */
+  
     public String getBluetooth() {
         return getStatus("Bluetooth:");
     }
@@ -48,7 +49,7 @@ public class FixturesPage extends BasePage {
     /**
      *
      * @return gps status
-     */
+ 
     public String getGps() {
         return getStatus("GPS:");
     }
@@ -56,7 +57,7 @@ public class FixturesPage extends BasePage {
     /**
      *
      * @return nfc status
-     */
+  
     public String getNfc() {
         return getStatus("NFC:");
     }
@@ -67,8 +68,10 @@ public class FixturesPage extends BasePage {
      * @param radioName should be followed by a colon, for example: "NFC:"
      * @return status of radio signal as a String
      */
+    
+    /*
     private String getStatus(String radioName) {
-        driver.scrollTo(radioName);
+        ((Object) driver).scrollTo(radioName);
         List textViews = driver.findElementsByClassName("android.widget.TextView");
 
         int idx;
@@ -82,5 +85,5 @@ public class FixturesPage extends BasePage {
 
         // Desired radio status comes immediately after its name. For example: NFC: true
         return ((MobileElement) textViews.get(idx + 1)).getText();
-    }
+    }*/
 }

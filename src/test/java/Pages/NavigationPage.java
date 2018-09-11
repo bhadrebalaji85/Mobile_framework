@@ -68,7 +68,7 @@ public class NavigationPage extends BasePage{
 
             }
             if (categoryElement == null) {
-                driver.scrollTo(categoryName);
+               // driver.scrollTo(categoryName);
             }
         }
 
