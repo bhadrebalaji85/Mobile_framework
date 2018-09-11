@@ -15,6 +15,8 @@
 
 package Pages;
 
+import org.openqa.selenium.WebElement;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -42,6 +44,27 @@ public class LoginPage extends BasePage {
      */
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/password_text_input")
     private MobileElement passwordField;
+    
+	@AndroidFindBy(id="sign_in_button")
+	WebElement Already_customer_signin;
+	
+	@AndroidFindBy(id="ap_email_login")
+	WebElement Enter_email;
+	
+	@AndroidFindBy(id="continue")
+	WebElement continue_button;
+	
+	@AndroidFindBy(id="ap_password")
+	WebElement Enter_password;
+	
+	@AndroidFindBy(id="signInSubmit")
+	WebElement Sign_button;
+	
+	@AndroidFindBy(xpath="//*[contains(@resource-id,'action_bar_burger_icon')]")
+	WebElement humburger_setting;
+	
+	@AndroidFindBy(xpath="//android.widget.ImageView[contains(@content-desk,'Navigation panel')]")
+	WebElement humburger_setting1;
 
     public LoginPage(AppiumDriver driver) {
         super(driver);
@@ -90,4 +113,27 @@ public class LoginPage extends BasePage {
     public void pressAltButton() {
         driver.findElementById("Alt Button").click();
     }
+	public String Validate_titile()
+	{
+		return driver.getTitle();
+	}
+
+public void Already_customer_signin_test() throws InterruptedException
+	{
+
+			isElementPresent(Already_customer_signin,10);
+			Already_customer_signin.click();
+			isElementPresent(Enter_email,20);
+			Enter_email.sendKeys("bhadrebalaji@gmail.com");
+			continue_button.click();
+			isElementPresent(Enter_password,20);
+			Boolean flag=Enter_password.isDisplayed();
+			System.out.println("Password field is:"+flag);
+			Enter_password.sendKeys("jodha@123");
+			isElementPresent(Sign_button,10);
+			Sign_button.click();
+			isElementPresent(humburger_setting,20);
+			//humburger_setting.click();
+
+	}
 }

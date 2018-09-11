@@ -20,6 +20,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -51,6 +53,16 @@ public abstract class BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(driver, 5, TimeUnit.SECONDS), this);
     }
 
+	public boolean isElementPresent(WebElement elementName, int timeout){
+			try{
+					WebDriverWait wait = new WebDriverWait(driver, timeout);
+					wait.until(ExpectedConditions.visibilityOf(elementName));
+					return true;
+				}catch(Exception e){
+					System.out.println("Element not found"+elementName);
+					return false;
+    }
+}
     /**
      * Tries three times to send text to element properly.
      *

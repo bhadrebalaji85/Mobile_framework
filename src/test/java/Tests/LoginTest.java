@@ -15,6 +15,9 @@
 
 package Tests;
 
+import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+
 import Pages.LoginPage;
 import Tests.AbstractBaseTests.TestBase;
 import org.testng.Assert;
@@ -52,7 +55,7 @@ public class LoginTest extends TestBase {
 
     /**
      * Tests logging in with valid credentials by verifying if the login message is correct
-     */
+ 
     @Test
     public void loginSuccess() throws InterruptedException {
         Assert.assertTrue(loginPage.login(CORRECT_USER_NAME, CORRECT_PASSWORD), BAD_TEXT_ENTRY_MSG);
@@ -61,7 +64,7 @@ public class LoginTest extends TestBase {
 
     /**
      * Tests logging in with invalid credentials by verifying if the error message is correct
-     */
+    
     @Test
     public void loginFail() throws InterruptedException {
         Assert.assertTrue(loginPage.login(FAIL_USER_NAME, FAIL_PASSWORD), BAD_TEXT_ENTRY_MSG);
@@ -71,6 +74,13 @@ public class LoginTest extends TestBase {
     /**
      * After each test method, logout or try again
      */
+    
+	@Test
+	  public void Loginto_AmazoneTest() throws MalformedURLException, FileNotFoundException, InterruptedException 
+				{
+		loginPage.Already_customer_signin_test();
+				}
+	
     @AfterMethod
     public void logOut() {
         loginPage.pressAltButton();
