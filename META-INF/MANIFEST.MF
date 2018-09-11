@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: aws-device-farm-appium-tests-for-sample-app
+Bundle-SymbolicName: aws-device-farm-appium-tests-for-sample-app
+Bundle-Version: 1.0.0.qualifier
+Export-Package: Pages,
+ Pages.Inputs,
+ Pages.Native,
+ Tests,
+ Tests.AbstractBaseTests,
+ Tests.Inputs,
+ Tests.Native
